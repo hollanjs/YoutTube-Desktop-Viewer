@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YoutTube_Desktop_Viewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Watch Later - YoutTube" Height="720" Width="1680" Background="#FF151515">
+    <Window.Resources>
+        <ControlTemplate x:Key="VideoListDescriptor" TargetType="{x:Type ContentControl}">
+            <Grid>
+                <Rectangle Fill="#FF3A3A3A" Height="100" VerticalAlignment="Stretch" Width="387" HorizontalAlignment="Stretch" Stroke="Black" StrokeThickness="0"/>
+                <Separator HorizontalAlignment="Stretch" Height="1" Margin="0" VerticalAlignment="Bottom" Width="387" Background="Black"/>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="50" Width="275" Margin="96,10,0,0" Foreground="#FFB6B6B6" FontFamily="Roboto" FontSize="16">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="2" Direction="283" Opacity="0.295" ShadowDepth="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1280*"/>
+            <ColumnDefinition Width="387*"/>
+        </Grid.ColumnDefinitions>
+        <MediaElement x:Name="videoArea" Margin="0">
+            <!-- Media Element - see what needs to go in here -->
+        </MediaElement>
+        <!-- End MediaElement -->
+        <ScrollViewer x:Name="myScrollViewer" Margin="0" Grid.Column="1">
+            <!-- Scroll Viewer Element - see what needs to go in here -->
+            <StackPanel x:Name="videoStack" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <ContentControl Template="{DynamicResource VideoListDescriptor}" Background="Black" BorderBrush="Black"/>
+            </StackPanel>
+        </ScrollViewer>
+        <!-- End ScrollViewer -->
     </Grid>
 </Window>

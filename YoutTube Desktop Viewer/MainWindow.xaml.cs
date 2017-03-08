@@ -23,6 +23,13 @@ namespace YoutTube_Desktop_Viewer
         public MainWindow()
         {
             InitializeComponent();
+
+            // setup scroll bar
+
+            // only show scroll bars if necessary
+            myScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            myScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+
         }
     }
 }
