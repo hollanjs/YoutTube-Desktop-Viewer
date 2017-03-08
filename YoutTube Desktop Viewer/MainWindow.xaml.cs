@@ -20,6 +20,8 @@ namespace YoutTube_Desktop_Viewer
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Video VideoOne { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +32,15 @@ namespace YoutTube_Desktop_Viewer
             myScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             myScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
 
+            // populate some videos for testing
+            VideoOne = new Video()
+            {
+                title = "Video Title Here",
+                channelName = "Hat Films"
+                //thumbnailLink = ""
+            };
+
+            this.DataContext = this;
         }
     }
 }
